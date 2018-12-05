@@ -1,0 +1,7 @@
+---
+# defaults file for redis-role
+redis_conf:
+  host: '127.0.0.1'
+  password: 'change_me'
+  datadir: '/var/lib/redis'
+  zabbix: 'False'

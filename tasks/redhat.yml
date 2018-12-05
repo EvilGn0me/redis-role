@@ -1,0 +1,14 @@
+- name: add repositories
+  yum_repository:
+    name: "{{ item.value.name }}"
+    baseurl: "{{ item.value.baseurl }}"
+    description: Repo managed by Ansible
+    gpgcheck: no
+  with_dict: "{{ redis.repos }}"
+
+- name: install packages
+  yum:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - "{{ redis.packages }}"

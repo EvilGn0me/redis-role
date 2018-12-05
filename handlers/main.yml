@@ -1,0 +1,16 @@
+---
+- name: restart redis
+  service:
+    name: "{{ item }}"
+    state: restarted
+    enabled: yes
+  with_items:
+    - "{{ redis.services }}"
+
+- name: restart zabbix-agent
+  service:
+    name: "{{ item }}"
+    state: restarted
+    enabled: yes
+  with_items:
+    - zabbix-agent

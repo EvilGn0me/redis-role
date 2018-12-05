@@ -1,0 +1,9 @@
+redis:
+  repos:
+    remi:
+      name: 'remi'
+      baseurl: 'http://rpms.remirepo.net/enterprise/7/remi/$basearch/'
+  packages:
+    - redis
+  services:
+    - redis
